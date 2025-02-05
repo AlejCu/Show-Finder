@@ -1,0 +1,441 @@
+@import "./base";
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $color-white;
+    font-family: Poppins, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-size: 14px;
+}
+
+
+/*Header section*/
+header {
+    background-color: $color-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        color: $color-lightRed;
+        margin: 0;
+    }
+}
+
+
+main {
+    min-height: 90vh;
+}
+
+
+/*Search Section*/
+
+#search_section {
+   @extend header;
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        padding: 10px;
+
+        input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            border: 1px solid $color-red;
+            border-radius: 5px;
+            background-color: $color-red;
+            color: #ffffff;
+            margin-left: 10px;
+
+            &:hover {
+                background-color: $color-white;
+                color: $color-black;
+                border: 1px solid $color-black;
+                cursor: pointer;
+                transition: ease-in-out 0.1s;
+            }
+        }
+    }
+}
+
+
+/*Shows Section*/
+#shows_section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: $color-black;
+    padding-top: 20px;
+
+    .show_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        margin: 10px;
+        background-color: $color-lightRed;
+        max-width: 245px;
+        min-width: 245px;
+        max-height: 381px;
+        overflow: hidden;
+
+        a {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 18em;
+            height: 25em;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 1.1em;
+            margin: 0;
+        }
+    }
+}
+
+
+/*Footer Section*/
+footer {
+    background-color: $color-black;
+    color: $color-white;
+    height: 120x;
+    padding: 20px;
+    font-size: .9em;
+    display: flex;
+    justify-content: space-between;
+
+    
+    .footer_left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+    
+    .footer_right {
+        @extend .footer_left;
+        flex-direction: row;}
+}
+
+    #tvm_logo {
+        width: 15em;
+
+        &:hover {
+            width: 15.5em;
+            transition: ease-in-out 0.1s;
+        }
+    }
+
+.footer_img {
+    width: 4em;
+    fill: $color-white;
+    margin-left: 10px;
+    margin-right: 20px;
+
+    &:hover {
+        width: 4.3em;
+        fill: #0077B5;
+        cursor: pointer;
+        transition: ease-in-out 0.1s;
+    }
+}
+
+
+
+/*Show information page*/
+.show_info {
+    background-color: $color-black;
+    color: $color-white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    @extend #show_main;
+}
+
+
+#show_main {
+    display: flex;
+    flex-direction: column;
+
+
+    img {
+        width: 20em;
+        height: 25em;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    #show_description {
+        padding-top: 60px;
+        font-size: .9em;
+    }
+
+    h1 {
+        color: $color-lightRed;
+        font-size: 1.5em;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+}
+
+
+#show_container {
+    display: flex;
+    flex-direction: row;
+
+    p {
+        padding: 20px;
+    }
+}
+
+
+#show_details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+    }
+
+
+}
+
+
+.rating_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; // Ensure items are centered
+
+    svg {
+        width: 1em;
+        height: 1em;
+        fill: #fccd32;
+        margin-left: 10px;
+    }
+}
+
+
+.show_topSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+/*Cast information*/
+
+#cast_info {
+
+    max-height: 500px;
+    overflow-y: scroll;
+
+    img {
+        width: 9em;
+        height: 9em;
+        object-fit: cover;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+
+    p {
+        text-align: center;
+        margin: 0;
+    }
+
+}
+
+
+.cast_photo {
+    margin: 10px;
+    max-width: 154px;
+}
+
+
+.cast_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#cast_characterName { 
+    font-size: .9em;
+    padding-top: 8px;
+    color: $color-lightRed;
+}
+
+
+/*Episodes Section*/
+#show_episodes {
+    @extend #show_main;
+    max-height: 500px;
+    overflow-y: scroll;
+
+    img {
+        width: 35em;
+        height: 12em;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-right: 20px;
+        max-width: 341px;
+    }
+
+    svg {
+        width: 1em;
+        height: 1em;
+        fill: #fccd32;
+        margin-left: 10px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        margin: 0;
+        margin-bottom: 20px;
+        color: $color-lightRed;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1.1em;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 50px;
+    }
+}
+
+
+.episode_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+
+
+
+/*Responsive Breakpoints*/
+@media screen and (max-width: 1130px) {
+    #show_container {
+        flex-direction: column;
+    }
+
+    .show_picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 796px) {
+    .show_topSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cast_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 656px) {
+
+    .episode_container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        img {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 593px) {
+    #show_details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            align-items: center;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        svg {
+            margin-bottom: 10px;
+        }
+    }
+
+    .footer_img {
+        width: 3em;
+
+        &:hover {
+            width: 3.2em;
+            transition: ease-in-out 0.1s;
+        }
+    }
+
+    #tvm_logo {
+        width: 11em;
+    }
+}
+
+
