@@ -1,0 +1,362 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #EEEEEE;
+  font-family: Poppins, sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+/*Header section*/
+header, #search_section {
+  background-color: #1D1616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+header a, #search_section a {
+  text-decoration: none;
+}
+header h1, #search_section h1 {
+  color: #D84040;
+  margin: 0;
+}
+
+main {
+  min-height: 90vh;
+}
+
+/*Search Section*/
+#search_section form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 10px;
+}
+#search_section form input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+#search_section form button {
+  padding: 10px;
+  border: 1px solid #8E1616;
+  border-radius: 5px;
+  background-color: #8E1616;
+  color: #ffffff;
+  margin-left: 10px;
+}
+#search_section form button:hover {
+  background-color: #EEEEEE;
+  color: #1D1616;
+  border: 1px solid #1D1616;
+  cursor: pointer;
+  transition: ease-in-out 0.1s;
+}
+
+/*Shows Section*/
+#shows_section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #1D1616;
+  padding-top: 20px;
+}
+#shows_section .show_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #D84040;
+  max-width: 245px;
+  min-width: 245px;
+  max-height: 381px;
+  overflow: hidden;
+}
+#shows_section .show_container a {
+  margin: 0;
+  padding: 0;
+}
+#shows_section .show_container img {
+  width: 18em;
+  height: 25em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+#shows_section .show_container h1 {
+  font-size: 1.1em;
+  margin: 0;
+}
+
+/*Footer Section*/
+footer {
+  background-color: #1D1616;
+  color: #EEEEEE;
+  height: 120x;
+  padding: 20px;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer_left, footer .footer_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+footer .footer_right {
+  flex-direction: row;
+}
+
+#tvm_logo {
+  width: 15em;
+}
+#tvm_logo:hover {
+  width: 15.5em;
+  transition: ease-in-out 0.1s;
+}
+
+.footer_img {
+  width: 4em;
+  fill: #EEEEEE;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.footer_img:hover {
+  width: 4.3em;
+  fill: #0077B5;
+  cursor: pointer;
+  transition: ease-in-out 0.1s;
+}
+
+/*Show information page*/
+.show_info {
+  background-color: #1D1616;
+  color: #EEEEEE;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+#show_main, #show_episodes, .show_info {
+  display: flex;
+  flex-direction: column;
+}
+#show_main img, #show_episodes img, .show_info img {
+  width: 20em;
+  height: 25em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+#show_main p, #show_episodes p, .show_info p {
+  margin: 0;
+}
+#show_main #show_description, #show_episodes #show_description, .show_info #show_description {
+  padding-top: 60px;
+  font-size: 0.9em;
+}
+#show_main h1, #show_episodes h1, .show_info h1 {
+  color: #D84040;
+  font-size: 1.5em;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+#show_container {
+  display: flex;
+  flex-direction: row;
+}
+#show_container p {
+  padding: 20px;
+}
+
+#show_details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 10px;
+}
+#show_details h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+.rating_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.rating_container svg {
+  width: 1em;
+  height: 1em;
+  fill: #fccd32;
+  margin-left: 10px;
+}
+
+.show_topSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/*Cast information*/
+#cast_info {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+#cast_info img {
+  width: 9em;
+  height: 9em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  margin: 5px;
+}
+#cast_info p {
+  text-align: center;
+  margin: 0;
+}
+
+.cast_photo {
+  margin: 10px;
+  max-width: 154px;
+}
+
+.cast_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#cast_characterName {
+  font-size: 0.9em;
+  padding-top: 8px;
+  color: #D84040;
+}
+
+/*Episodes Section*/
+#show_episodes {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+#show_episodes img {
+  width: 35em;
+  height: 12em;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+  max-width: 341px;
+}
+#show_episodes svg {
+  width: 1em;
+  height: 1em;
+  fill: #fccd32;
+  margin-left: 10px;
+}
+#show_episodes h2 {
+  font-size: 1.4em;
+  margin: 0;
+  margin-bottom: 20px;
+  color: #D84040;
+}
+#show_episodes p {
+  margin-bottom: 15px;
+}
+#show_episodes h3 {
+  font-size: 1.1em;
+  margin: 0;
+  margin-bottom: 10px;
+}
+#show_episodes ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#show_episodes li {
+  margin-bottom: 50px;
+}
+
+.episode_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+}
+
+/*Responsive Breakpoints*/
+@media screen and (max-width: 1130px) {
+  #show_container {
+    flex-direction: column;
+  }
+  .show_picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 796px) {
+  .show_topSection {
+    display: flex;
+    flex-direction: column;
+  }
+  #cast_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 656px) {
+  .episode_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .episode_container img {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 593px) {
+  #show_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #show_details h1 {
+    align-items: center;
+    text-align: center;
+  }
+  #show_details p {
+    margin-bottom: 10px;
+  }
+  #show_details svg {
+    margin-bottom: 10px;
+  }
+  .footer_img {
+    width: 3em;
+  }
+  .footer_img:hover {
+    width: 3.2em;
+    transition: ease-in-out 0.1s;
+  }
+  #tvm_logo {
+    width: 11em;
+  }
+}/*# sourceMappingURL=styles.css.map */
