@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/show-finder/static/js/main.86d44188.js",
-    "index.html": "/show-finder/index.html",
-    "main.86d44188.js.map": "/show-finder/static/js/main.86d44188.js.map"
+    "main.js": "/Show-Finder/static/js/main.8c850a39.js",
+    "index.html": "/Show-Finder/index.html",
+    "main.8c850a39.js.map": "/Show-Finder/static/js/main.8c850a39.js.map"
   },
   "entrypoints": [
-    "static/js/main.86d44188.js"
+    "static/js/main.8c850a39.js"
   ]
 }
