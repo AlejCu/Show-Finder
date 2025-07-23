@@ -1,16 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
 import { Theme } from './theme';
+const poppinsBold = process.env.PUBLIC_URL + '/assets/fonts/Poppins-Bold.ttf';
+const poppinsRegular = process.env.PUBLIC_URL + '/assets/fonts/Poppins-Regular.ttf';
 
 export const GlobalStyles = createGlobalStyle`
 
     @font-face {
         font-family: 'Poppins';
-        src: url('../assets/fonts/Poppins-Bold.ttf');
+        src: url('${poppinsBold}');
     }
 
     @font-face {
         font-family: 'Poppins-regular';
-        src: url('../assets/fonts/Poppins-Regular.ttf');
+        src: url('${poppinsRegular}');
     }
 
     body {
