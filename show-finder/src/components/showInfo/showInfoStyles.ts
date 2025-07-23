@@ -1,189 +1,9 @@
-@import "./base";
+import styled, { css } from "styled-components";
+import { Theme } from '../../theme';
 
-html {
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: $color-white;
-    font-family: Poppins, sans-serif;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    font-size: 14px;
-}
-
-
-/*Header section*/
-header {
-    background-color: $color-black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    a {
-        text-decoration: none;
-    }
-
-    h1 {
-        color: $color-lightRed;
-        margin: 0;
-    }
-}
-
-
-main {
-    min-height: 90vh;
-}
-
-
-/*Search Section*/
-
-#search_section {
-   @extend header;
-
-    form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        padding: 10px;
-
-        input {
-            width: 80%;
-            padding: 10px;
-            border: 1px solid #000000;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px;
-            border: 1px solid $color-red;
-            border-radius: 5px;
-            background-color: $color-red;
-            color: #ffffff;
-            margin-left: 10px;
-
-            &:hover {
-                background-color: $color-white;
-                color: $color-black;
-                border: 1px solid $color-black;
-                cursor: pointer;
-                transition: ease-in-out 0.1s;
-            }
-        }
-    }
-}
-
-
-/*Shows Section*/
-#shows_section {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    color: $color-black;
-    padding-top: 20px;
-
-    .show_container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid #000000;
-        border-radius: 5px;
-        margin: 10px;
-        background-color: $color-lightRed;
-        max-width: 245px;
-        min-width: 245px;
-        max-height: 381px;
-        overflow: hidden;
-
-        a {
-            margin: 0;
-            padding: 0;
-        }
-
-        img {
-            width: 18em;
-            height: 25em;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        h1 {
-            font-size: 1.1em;
-            margin: 0;
-        }
-    }
-}
-
-
-/*Footer Section*/
-footer {
-    background-color: $color-black;
-    color: $color-white;
-    height: 120x;
-    padding: 20px;
-    font-size: .9em;
-    display: flex;
-    justify-content: space-between;
-
-    
-    .footer_left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-    }
-    
-    .footer_right {
-        @extend .footer_left;
-        flex-direction: row;}
-}
-
-    #tvm_logo {
-        width: 15em;
-
-        &:hover {
-            width: 15.5em;
-            transition: ease-in-out 0.1s;
-        }
-    }
-
-.footer_img {
-    width: 4em;
-    fill: $color-white;
-    margin-left: 10px;
-    margin-right: 20px;
-
-    &:hover {
-        width: 4.3em;
-        fill: #0077B5;
-        cursor: pointer;
-        transition: ease-in-out 0.1s;
-    }
-}
-
-
-
-/*Show information page*/
-.show_info {
-    background-color: $color-black;
-    color: $color-white;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    @extend #show_main;
-}
-
-
-#show_main {
+const showMain = css`
     display: flex;
     flex-direction: column;
-
 
     img {
         width: 20em;
@@ -202,11 +22,26 @@ footer {
     }
 
     h1 {
-        color: $color-lightRed;
+        color: ${Theme.colors.lightRed};
         font-size: 1.5em;
         padding-bottom: 20px;
         margin: 0;
     }
+`;
+
+export const ShowInfoContainer = styled.div`
+    .show_info {
+        background-color: ${Theme.colors.black};
+        color: ${Theme.colors.white};
+        padding: 20px;
+        margin: 10px;
+        border-radius: 5px;
+        ${showMain}
+}
+
+
+#show_main {
+    ${showMain}
 }
 
 
@@ -227,10 +62,11 @@ footer {
     padding: 20px;
     margin: 10px;
 
-    h1 {
+    h2 {
         margin: 0;
         padding: 0;
         font-size: 1em;
+        color: ${Theme.colors.lightRed};
     }
 
 
@@ -261,9 +97,10 @@ footer {
 /*Cast information*/
 
 #cast_info {
-
     max-height: 500px;
     overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: ${Theme.colors.lightRed} ${Theme.colors.black};
 
     img {
         width: 9em;
@@ -297,15 +134,17 @@ footer {
 #cast_characterName { 
     font-size: .9em;
     padding-top: 8px;
-    color: $color-lightRed;
+    color: ${Theme.colors.lightRed};
 }
 
 
 /*Episodes Section*/
 #show_episodes {
-    @extend #show_main;
+    ${showMain}
     max-height: 500px;
     overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: ${Theme.colors.lightRed} ${Theme.colors.black};
 
     img {
         width: 35em;
@@ -327,7 +166,7 @@ footer {
         font-size: 1.4em;
         margin: 0;
         margin-bottom: 20px;
-        color: $color-lightRed;
+        color: ${Theme.colors.lightRed};
     }
 
     p {
@@ -359,9 +198,38 @@ footer {
     padding: 0;
 }
 
+/*Season Selector Styling*/
 
+.season-selector {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 
-/*Responsive Breakpoints*/
+    label {
+        margin-right: 10px;
+        font-size: 1.4em;
+        color: ${Theme.colors.lightRed};
+        font-family: Poppins, sans-serif;
+    }
+
+    select {
+        padding: 5px;
+        font-size: 1.1em;
+        border-radius: 5px;
+        border: none;
+        background-color: ${Theme.colors.black};
+        color: ${Theme.colors.white};
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+
+    }
+}
+
+/* Responsive styles */
 @media screen and (max-width: 1130px) {
     #show_container {
         flex-direction: column;
@@ -373,7 +241,6 @@ footer {
         align-items: center;
     }
 }
-
 
 @media screen and (max-width: 796px) {
     .show_topSection {
@@ -388,7 +255,6 @@ footer {
     }
 }
 
-
 @media screen and (max-width: 656px) {
 
     .episode_container {
@@ -402,7 +268,6 @@ footer {
         }
     }
 }
-
 
 @media screen and (max-width: 593px) {
     #show_details {
@@ -437,5 +302,4 @@ footer {
         width: 11em;
     }
 }
-
-
+`;
