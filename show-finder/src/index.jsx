@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, useNavigate, HashRouter} from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 //component imports
 import { Header } from './components/header/header';
@@ -42,8 +43,8 @@ function Main() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
+    <HashRouter>
       <Main />
-    </Router>
+    </HashRouter>
   </React.StrictMode>
 );
