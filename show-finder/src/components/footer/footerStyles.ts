@@ -10,6 +10,7 @@ export const FooterStyles = styled.footer`
     display: flex;
     justify-content: space-between;
     font-family: Poppins-regular, sans-serif;
+    font-display: swap;
 
     
     .footer_left {
@@ -44,12 +45,12 @@ export const FooterStyles = styled.footer`
 .footer_img {
     color: ${Theme.colors.white};
     margin-left: 10px;
-    margin-right: 20px; 
+    margin-right: 20px;
+    transition: ease-in-out 0.2s; 
 
     svg {
         width: 4em;
         height: 4em;
-        transition: ease-in-out 0.2s;
     }
 
     &:hover {
