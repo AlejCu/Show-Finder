@@ -13,7 +13,7 @@ export const HeaderStyles = styled.header`
     }
 
     h1 {
-        color: ${Theme.colors.lightRed};
+        color: ${Theme.colors.red};
         margin: 0;
         font-weight: 700;
     }
@@ -45,8 +45,9 @@ export const HeaderStyles = styled.header`
             border: 1px solid ${Theme.colors.red};
             border-radius: 5px;
             background-color: ${Theme.colors.red};
-            color: #ffffff;
+            color: ${Theme.colors.black};
             margin-left: 10px;
+            transition: ease-in-out 0.2s;
 
             &:hover {
                 background-color: ${Theme.colors.white};
@@ -54,7 +55,7 @@ export const HeaderStyles = styled.header`
                 border: 1px solid ${Theme.colors.black};
                 cursor: pointer;
                 transform: scale(1.1);
-                transition: ease-in-out 0.1s;
+                transition: ease-in-out 0.2s;
             }
 
             &:active {

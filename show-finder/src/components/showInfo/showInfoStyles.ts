@@ -22,10 +22,24 @@ const showMain = css`
     }
 
     h1 {
-        color: ${Theme.colors.lightRed};
+        color: ${Theme.colors.red};
         font-size: 1.5em;
-        padding-bottom: 20px;
         margin: 0;
+    }
+`;
+
+const noImage = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid ${Theme.colors.white};
+    border-radius: 25px;
+    margin-top: 20px;
+
+    svg {
+        width: 1.2em;
     }
 `;
 
@@ -35,8 +49,21 @@ export const ShowInfoContainer = styled.div`
         color: ${Theme.colors.white};
         padding: 20px;
         margin: 10px;
-        border-radius: 5px;
+        border-radius: 15px;
         ${showMain}
+}
+
+.show_picture {
+    img {
+        margin-top: 20px;
+        border-radius: 25px;
+    }
+}
+
+.no-image {
+    width: 250px;
+    height: 350px;
+    ${noImage}
 }
 
 
@@ -66,7 +93,7 @@ export const ShowInfoContainer = styled.div`
         margin: 0;
         padding: 0;
         font-size: 1em;
-        color: ${Theme.colors.lightRed};
+        color: ${Theme.colors.red};
     }
 
 
@@ -77,12 +104,12 @@ export const ShowInfoContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center; // Ensure items are centered
+    justify-content: center;
 
     svg {
         width: 1em;
         height: 1em;
-        fill: #fccd32;
+        color: #fccd32;
         margin-left: 10px;
     }
 }
@@ -100,7 +127,7 @@ export const ShowInfoContainer = styled.div`
     max-height: 500px;
     overflow-y: scroll;
     scrollbar-width: thin;
-    scrollbar-color: ${Theme.colors.lightRed} ${Theme.colors.black};
+    scrollbar-color: ${Theme.colors.red} ${Theme.colors.black};
 
     img {
         width: 9em;
@@ -116,6 +143,10 @@ export const ShowInfoContainer = styled.div`
         margin: 0;
     }
 
+    h1 {
+        margin-left: 10px;
+    }
+
 }
 
 
@@ -128,13 +159,21 @@ export const ShowInfoContainer = styled.div`
 .cast_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 #cast_characterName { 
     font-size: .9em;
     padding-top: 8px;
-    color: ${Theme.colors.lightRed};
+    color: ${Theme.colors.red};
+}
+
+.no-image_cast {
+    width: 126px;
+    height: 126px;
+    ${noImage}
+    margin: 10px;
+    border-radius: 5px;
 }
 
 
@@ -144,7 +183,7 @@ export const ShowInfoContainer = styled.div`
     max-height: 500px;
     overflow-y: scroll;
     scrollbar-width: thin;
-    scrollbar-color: ${Theme.colors.lightRed} ${Theme.colors.black};
+    scrollbar-color: ${Theme.colors.red} ${Theme.colors.black};
 
     img {
         width: 35em;
@@ -155,18 +194,25 @@ export const ShowInfoContainer = styled.div`
         max-width: 341px;
     }
 
-    svg {
+    span {
+        color: ${Theme.colors.red};
+    }
+
+    #star_icon {
         width: 1em;
         height: 1em;
-        fill: #fccd32;
-        margin-left: 10px;
+        margin-left: 2px;
+
+        svg {
+            color: #fccd32;
+        }
     }
 
     h2 {
         font-size: 1.4em;
         margin: 0;
         margin-bottom: 20px;
-        color: ${Theme.colors.lightRed};
+        color: ${Theme.colors.red};
     }
 
     p {
@@ -198,6 +244,14 @@ export const ShowInfoContainer = styled.div`
     padding: 0;
 }
 
+.no-image_episode {
+    width: 341px;
+    height: 191px;
+    ${noImage}
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
 /*Season Selector Styling*/
 
 .season-selector {
@@ -206,20 +260,26 @@ export const ShowInfoContainer = styled.div`
     margin-bottom: 20px;
 
     label {
-        margin-right: 10px;
+        margin: 0 10px 0 10px;
         font-size: 1.4em;
-        color: ${Theme.colors.lightRed};
+        color: ${Theme.colors.white};
         font-family: Poppins, sans-serif;
+        font-display: swap;
     }
 
     select {
         padding: 5px;
         font-size: 1.1em;
-        border-radius: 5px;
+        border-radius: 25px;
         border: none;
         background-color: ${Theme.colors.black};
         color: ${Theme.colors.white};
         cursor: pointer;
+
+        &:hover {
+            background-color: ${Theme.colors.lightBlack};
+            transition: ease-in-out 0.2s;
+        }
 
         &:focus {
             outline: none;

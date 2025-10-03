@@ -6,6 +6,11 @@ import { useShowCast } from "../../hooks/useShowCast";
 import { useShowEpisodes } from "../../hooks/useShowEpisodes";
 import React, { useState } from "react";
 
+// FontAwesome imports for icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+
 // Styling import 
 import { ShowInfoContainer } from "./showInfoStyles";
 
@@ -37,7 +42,7 @@ function ShowInfo() {
                     <h2>Rating</h2>
                     <div className="rating_container">
                         <p>{show.rating?.average || "N/A"}</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg>
+                        <FontAwesomeIcon icon={faStar} />
                     </div>
                 </div>
                 <div className="show_genres">
@@ -63,8 +68,14 @@ function ShowInfo() {
                     <div className="show_info" id="show_container">
                         <div className="show_picture">
                             <h1>{show.name}</h1>
-                            {show.image?.original && (
-                                <img src={show.image.original} alt={show.name} />
+                            {/* Logic to show image if available, if not a placeholder */}
+                            {show.image?.original ? (
+                                <img src={show.image.original} alt={show.name} fetchPriority='high' />
+                            ) : (
+                                <div className="no-image">
+                                    <FontAwesomeIcon icon={faCircleXmark} />
+                                    No image available
+                                </div>
                             )}
                         </div>
                         <p id="show_description">
@@ -77,8 +88,14 @@ function ShowInfo() {
                         <div className="cast_container">
                             {cast.map((member: any) => (
                                 <div className="cast_photo" key={member.person.id}>
-                                    {member.person.image?.medium && (
-                                        <img src={member.person.image.medium} alt={member.person.name} />
+                                    {/* Logic to show image if available, if not a placeholder */}
+                                    {member.person.image?.medium ? (
+                                        <img src={member.person.image.medium} alt={member.person.name}  loading="lazy"/>
+                                    ) : (
+                                        <div className="no-image_cast">
+                                            <FontAwesomeIcon icon={faCircleXmark} />
+                                            No image available
+                                        </div>
                                     )}
                                     <p>{member.person.name}</p>
                                     <p id="cast_characterName">{member.character.name}</p>
@@ -91,10 +108,11 @@ function ShowInfo() {
 
             {/* Episodes section */}
             <section className="show_info-container">
-                <article className="show_info" id="show_episodes" data-testid="show-episodes">
-                    <h1>Episodes</h1>
+                <article className="show_info" id="show_episodes" data-testid="show-episodes"> 
                     {/* Season selection dropdown */}
                     <div className="season-selector">
+                        <h1>Episodes</h1>
+
                         <label htmlFor="season-select">Season: </label>
                         <select 
                             id="season-select"
@@ -110,26 +128,57 @@ function ShowInfo() {
                         </select>
                     </div>
                     <ul>
-                        {filteredEpisodes.map((ep: any) => (
-                            <li key={ep.id}>
-                                <h3><span>Episode {ep.number} -</span><span> {ep.name}</span></h3>
+                        {filteredEpisodes.map((ep: any, idx: number) => {
+                            // Logic to show season header only once per season
+                            let showSeasonHeader = false;
+                            if (selectedSeason === null) {
+                            if (idx === 0 || ep.season !== filteredEpisodes[idx - 1].season) {
+                                showSeasonHeader = true;
+                            }
+                            }
 
+                            return (
+                            <React.Fragment key={ep.id}>
+                                {showSeasonHeader && (
+                                <h2>Season {ep.season}</h2>
+                                )}
+                                <li>
+                                <h3>
+                                    <span>Episode {ep.number}</span> - {ep.name}
+                                </h3>
                                 <div className="episode_container">
-
-                                    {ep.image?.medium && (
-                                        <img src={ep.image.original} alt={ep.name} />
+                                    {/* Logic to show image if available, if not a placeholder */}
+                                    {ep.image?.medium ? (
+                                    <img src={ep.image.medium} alt={ep.name} loading="lazy" />
+                                    ) : (
+                                    <div className="no-image_episode">
+                                        <FontAwesomeIcon icon={faCircleXmark} />
+                                        No image available
+                                    </div>
                                     )}
                                     <div className="episode_info">
-                                        <p>{ep.summary ? ep.summary.replace(/<[^>]+>/g, "") : "No summary available."}</p>
-
-                                        <div className="episode_extra-info">
-                                            <p>Runtime: {ep.runtime} minutes</p>
-                                            <p>Rating: {ep.rating.average} <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></svg></span></p>
-                                        </div>
+                                    <p>
+                                        {ep.summary
+                                        ? ep.summary.replace(/<[^>]+>/g, "")
+                                        : "No summary available."}
+                                    </p>
+                                    <div className="episode_extra-info">
+                                        <p>
+                                        <span>Runtime:</span> {ep.runtime} minutes
+                                        </p>
+                                        <p>
+                                        <span>Rating:</span> {ep.rating.average}{" "}
+                                        <span id="star_icon">
+                                            <FontAwesomeIcon icon={faStar} />
+                                        </span>
+                                        </p>
+                                    </div>
                                     </div>
                                 </div>
-                            </li>
-                        ))}
+                                </li>
+                            </React.Fragment>
+                            );
+                        })}
                     </ul>
                 </article>
             </section>

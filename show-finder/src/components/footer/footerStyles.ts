@@ -10,6 +10,7 @@ export const FooterStyles = styled.footer`
     display: flex;
     justify-content: space-between;
     font-family: Poppins-regular, sans-serif;
+    font-display: swap;
 
     
     .footer_left {
@@ -27,30 +28,37 @@ export const FooterStyles = styled.footer`
         align-items: center;
         width: 50%;;
         flex-direction: row;
-        }
+    }
 }
 
     #tvm_logo {
         width: 15em;
+        transition: ease-in-out 0.2s;
 
         &:hover {
             transform: scale(1.1);
             cursor: pointer;
-            transition: ease-in-out 0.1s;
+            transition: ease-in-out 0.2s;
         }
     }
 
 .footer_img {
-    width: 4em;
-    fill: ${Theme.colors.white};
+    color: ${Theme.colors.white};
     margin-left: 10px;
     margin-right: 20px;
+    transition: ease-in-out 0.2s; 
+
+    svg {
+        width: 4em;
+        height: 4em;
+    }
 
     &:hover {
-        fill: #0077B5;
+        color: ${Theme.colors.lightRed};
         cursor: pointer;
         transform: scale(1.1);
-        transition: ease-in-out 0.1s;
+        transition: ease-in-out 0.2s;
     }
 }
+
 `;

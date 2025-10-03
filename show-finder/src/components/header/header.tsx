@@ -1,5 +1,6 @@
 import { HeaderStyles } from "./headerStyles";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Header component for searching shows
 function Header({ onSearch }: { onSearch: (query: string) => void }) {
@@ -15,7 +16,13 @@ function Header({ onSearch }: { onSearch: (query: string) => void }) {
     return (
         <>
             <HeaderStyles>
-                <h1>Show Finder</h1>
+                <Link to="/" className="home_link" data-testid="home-link"
+                onClick={() => {
+                    setInput("");
+                    onSearch("");
+                }}>
+                    <h1>Show Finder</h1>
+                </Link>
                 <section id="search_section">
                     <form onSubmit={handleSubmit}>
                         <input 
