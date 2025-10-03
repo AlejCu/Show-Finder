@@ -19,11 +19,11 @@ function Footer() {
 
         <section className="footer_right">
 
-            <a href="https://www.linkedin.com/in/alex-curiel-front-end-developer/" target="_blank" className="footer_img">
+            <a href="https://www.linkedin.com/in/alex-curiel-front-end-developer/"  rel="noreferrer" target="_blank" className="footer_img" aria-label='LinkedIn'>
                 <FontAwesomeIcon icon={faLinkedin} />
             </a>
 
-            <a href="https://github.com/AlejCu" rel="noreferrer" target="_blank" className="footer_img">
+            <a href="https://github.com/AlejCu" rel="noreferrer" target="_blank" className="footer_img" aria-label='GitHub'>
                 <FontAwesomeIcon icon={faGithub} />
             </a>
 
