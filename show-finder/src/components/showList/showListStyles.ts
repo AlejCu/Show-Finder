@@ -41,7 +41,7 @@ export const ShowListStyles = styled.div`
         text-align: center;
         border: 1px solid #000000;
         border-radius: 15px;
-        background-color: ${Theme.colors.lightherRed};
+        background-color: ${Theme.colors.darkerRed};
         max-width: 245px;
         min-width: 245px;
         min-height: 381px;
@@ -76,7 +76,7 @@ export const ShowListStyles = styled.div`
         color: ${Theme.colors.white};
 
         svg {
-            font-size: 4em;
+            font-size: 1.2em;
             margin-bottom: 10px;
         }
     }
@@ -90,6 +90,7 @@ export const ShowListStyles = styled.div`
         text-align: center;
         font-weight: bold;
         font-family: Poppins, sans-serif;
+        font-display: swap;
     }
 
     /* Loading dots animation */
@@ -98,14 +99,13 @@ export const ShowListStyles = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 80px;
+        padding-top: 250px;
     }
 
    .loading-dots {
         position: relative;
         width: 80px;
         height: 80px;
-        mar
     }
 
     .loading-dots span {
