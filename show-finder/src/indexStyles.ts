@@ -8,11 +8,17 @@ export const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family: 'Poppins';
         src: url('${poppinsBold}');
+        font-display: swap;
     }
 
     @font-face {
         font-family: 'Poppins-regular';
         src: url('${poppinsRegular}');
+        font-display: swap;
+    }
+
+    h1 {
+        font-family: Poppins, sans-serif;
     }
 
     body {
@@ -24,11 +30,6 @@ export const GlobalStyles = createGlobalStyle`
         overflow-x: hidden;
         font-size: 14px;
     }
-
-    h1 {
-        font-family: Poppins, sans-serif;
-    }
-
 
     main {
         min-height: 80vh;
