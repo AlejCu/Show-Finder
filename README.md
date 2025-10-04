@@ -8,22 +8,27 @@ For the fetch of each endpoint a custom hook was created to facilitate the proce
 
 You can search for them by entering the name of the show in the search box and this will show you a list of all the shows that match that name 
 
-<img width="1835" height="910" alt="image" src="https://github.com/user-attachments/assets/0a74883e-f195-44bc-b63e-f3c36c8007a1" />
+
+<img width="1900" height="935" alt="image" src="https://github.com/user-attachments/assets/2c47462e-6865-41e6-aabf-38ae595734d5" />
 
 
 If you click on the image for one of these results, you will be taken to the show details route.
 
 
-<img width="1850" height="914" alt="image" src="https://github.com/user-attachments/assets/e77b0ddd-68bd-427b-b62c-5b0ea0fc38a3" />
+<img width="1899" height="974" alt="image" src="https://github.com/user-attachments/assets/f17feae2-d259-4d71-943e-3b7bd3731578" />
 
 
 From this route you will see a description of the show, the rating for it, a list of the cast members and episodes available, within this episodes section, you can use the dropdown menu to only display episodes from a specific season, this was added because scrolling through all the episodes for a long season made things tedious.
 
 
-<img width="1839" height="540" alt="image" src="https://github.com/user-attachments/assets/929c9d55-f28a-49de-858e-db88d3e7387e" />
+<img width="1888" height="559" alt="image" src="https://github.com/user-attachments/assets/f885cc62-3c58-47d9-b851-d255f3aea9c8" />
+
 
 ## Core Web Vitals
 
+Meeting all the Core Web Vitals requirements for the site to be accesible and to have a good performance
+
+<img width="440" height="184" alt="image" src="https://github.com/user-attachments/assets/56b22469-3743-4389-807c-64739a143bb4" />
 
 
 ## How to install and scripts
