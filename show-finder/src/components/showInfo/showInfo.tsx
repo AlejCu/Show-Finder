@@ -69,8 +69,8 @@ function ShowInfo() {
                         <div className="show_picture">
                             <h1>{show.name}</h1>
                             {/* Logic to show image if available, if not a placeholder */}
-                            {show.image?.original ? (
-                                <img src={show.image.original} alt={show.name} fetchPriority='high' />
+                            {show.image?.medium ? (
+                                <img src={show.image.medium} alt={show.name} fetchPriority='high' />
                             ) : (
                                 <div className="no-image">
                                     <FontAwesomeIcon icon={faCircleXmark} />
