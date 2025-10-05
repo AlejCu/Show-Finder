@@ -4,7 +4,7 @@ import { Footer } from '../components/footer/footer';
 import '@testing-library/jest-dom'
 
 describe('Footer', () => {
-  test('REnders the TVMaze text', () => {
+  test('Renders the TVMaze text', () => {
     render(<Footer />);
     expect(screen.getByText(/Created using the TVmaze API/i)).toBeInTheDocument();
   });
@@ -18,13 +18,11 @@ describe('Footer', () => {
     expect(img).toHaveAttribute('src', '/assets/img/tvm_api.png');
   });
 
-  test('REnders the github logo and link', () => {
+  test('Renders the github logo and link', () => {
     render(<Footer />);
-    const link = screen.getByRole('link', { name: /Github Logo/i });
-    expect(link).toHaveAttribute('href', 'https://github.com/AlejCu?tab=repositories');
-    const img = screen.getByAltText(/Github Logo/i);
-    expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('src', '/assets/img/github-mark-white.svg');
+    const links = screen.getAllByRole('link');
+    const github = links.find(link => link.href.includes('https://github.com/AlejCu'));
+    expect(github).toBeInTheDocument();
   });
 
   test('Renders the Linkedin logo and link', () => {

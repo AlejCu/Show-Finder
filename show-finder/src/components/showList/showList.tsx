@@ -16,7 +16,7 @@ function ShowList({ //Function to display a list of shows that match the search 
   return (
     <ShowListStyles>
         {/*Conditional loading based on the search results*/}
-        {loading && <div className="load-anim-cont">
+        {loading && <div className="load-anim-cont" data-testid="loading-animation">
             <div className="loading-dots">
               <span style={{"--i":"1"} as React.CSSProperties}></span>
               <span style={{"--i":"2"} as React.CSSProperties}></span>
