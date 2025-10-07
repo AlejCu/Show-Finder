@@ -12,7 +12,7 @@ function Footer() {
             <p>Created using the TVmaze API</p>
 
             <a href="https://www.tvmaze.com/api" rel="noreferrer" target="_blank">
-                <img src={process.env.PUBLIC_URL + "/assets/img/tvm_api.png"} alt="TVMaze API Logo" id="tvm_logo"/>
+                <img src={process.env.PUBLIC_URL + "/assets/img/tvm_api.png"} alt="TVMaze API Logo" id="tvm_logo" loading='lazy'/>
             </a>
 
         </section>
