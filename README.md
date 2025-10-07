@@ -30,6 +30,8 @@ Meeting all the Core Web Vitals requirements for the site to be accesible and to
 
 <img width="440" height="184" alt="image" src="https://github.com/user-attachments/assets/56b22469-3743-4389-807c-64739a143bb4" />
 
+<img width="446" height="186" alt="image" src="https://github.com/user-attachments/assets/9a6c7b2e-65c5-4fb3-807a-59616e57eb73" />
+
 
 ## How to install and scripts
 
